@@ -32,6 +32,6 @@
     "babel-preset-react": "^6.23.0",
     "babel-register": "^6.23.0",
     "mocha": "^3.2.0",
-    "react-dom-server": "0.0.5"
+    "react-dom": "^15.4.2"
   }
 }
