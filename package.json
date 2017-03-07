@@ -4,7 +4,7 @@
   "description": "A React component that will sanitize user-inputted HTML code, using the popular sanitize-html package",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
