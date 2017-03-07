@@ -25,5 +25,13 @@
   "peerDependencies": {
     "react": "^15.4.2",
     "sanitize-html": "^1.14.1"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-es2017": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-register": "^6.23.0",
+    "mocha": "^3.2.0",
+    "react-dom-server": "0.0.5"
   }
 }
