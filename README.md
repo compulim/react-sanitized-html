@@ -21,6 +21,14 @@ ReactDOM.render(
 );
 ```
 
+It will output as:
+
+```html
+<div>
+  <a href="http://bing.com/">Bing</a>
+</div>
+```
+
 # Options
 
 You can add [`sanitize-html`](https://npmjs.com/package/sanitize-html) options as props. For example,
