@@ -27,7 +27,8 @@ You can add [`sanitize-html`](https://npmjs.com/package/sanitize-html) options a
 
 ```html
 <SanitizedHTML
-  allowedAttributes={['a']}
+  allowedAttributes={{ 'a': ['href'] }}
+  allowedTags={['a']}
   html={ `<a href="http://bing.com/">Bing</a>` }
 />
 ```
