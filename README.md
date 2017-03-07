@@ -1,5 +1,7 @@
 # react-sanitized-html
 
+[![npm version](https://badge.fury.io/js/react-sanitized-html.svg)](https://npmjs.com/package/react-sanitized-html) [![Node.js dependencies](https://david-dm.org/compulim/react-sanitized-html.svg)](https://david-dm.org/compulim/react-sanitized-html) [![npm downloads](https://img.shields.io/npm/dm/react-sanitized-html.svg)](https://npmjs.com/package/react-sanitized-html)
+
 A React component that will sanitize user-inputted HTML code, using the popular [`sanitize-html`](https://npmjs.com/package/sanitize-html) package.
 
 # Install
@@ -42,6 +44,17 @@ You can add [`sanitize-html`](https://npmjs.com/package/sanitize-html) options a
 ```
 
 You can find more options [here](https://npmjs.com/package/sanitize-html).
+
+# Development
+
+To setup your development environment, after cloning the repository, run the following steps.
+
+```
+npm install react sanitize-html
+npm install --only=development
+```
+
+Then run `npm test` to run all tests.
 
 # Contribution
 
