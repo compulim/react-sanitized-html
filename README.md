@@ -6,7 +6,7 @@ A React component that will sanitize user-inputted HTML code, using the popular 
 
 This React component requires both [`react`](https://npmjs.com/package/react) and [`sanitize-html`](https://npmjs.com/package/sanitize-html) to be installed to work. We marked both as peer dependency so you could use the version of React as it fit.
 
-To install this package, `npm install react-sanitized-html sanitize-html --save`
+Run `npm install react-sanitized-html sanitize-html --save` to install this package.
 
 # Example usage
 
