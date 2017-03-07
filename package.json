@@ -1,0 +1,29 @@
+{
+  "name": "react-sanitized-html",
+  "version": "1.0.0",
+  "description": "A React component that will sanitize user-inputted HTML code, using the popular sanitize-html package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/compulim/react-sanitize-html.git"
+  },
+  "keywords": [
+    "sanitize",
+    "sanitizer",
+    "react",
+    "clean"
+  ],
+  "author": "William Wong <compulim@hotmail.com> (https://github.com/compulim)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/compulim/react-sanitize-html/issues"
+  },
+  "homepage": "https://github.com/compulim/react-sanitize-html#readme",
+  "peerDependencies": {
+    "react": "^15.4.2",
+    "sanitize-html": "^1.14.1"
+  }
+}
