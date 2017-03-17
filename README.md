@@ -10,6 +10,10 @@ This React component requires both [`react`](https://npmjs.com/package/react) an
 
 Run `npm install react-sanitized-html sanitize-html --save` to install this package.
 
+> Because both [`htmlparser2`](https://npmjs.com/packages/htmlparser2) and [`domhandler`](https://npmjs.com/packages/domhandler) (dependencies of [`sanitize-html`](https://npmjs.com/packages/sanitize-html)) requires [ES2015 Property Accessors](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors) for shorthanded properties. Thus, this component cannot be used in IE8.
+
+> In [`sanitize-html@1.14.1`](https://npmjs.com/packages/sanitize-html), shorthands are not used. Thus, it is possible to build a workaround for IE8 by customizing both [`htmlparser2`] and [`domhandler`] without shorthands.
+
 # Example usage
 
 ```jsx

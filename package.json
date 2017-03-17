@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/compulim/react-sanitize-html.git"
+    "url": "git+https://github.com/compulim/react-sanitized-html.git"
   },
   "keywords": [
     "sanitize",
@@ -19,9 +19,9 @@
   "author": "William Wong <compulim@hotmail.com> (https://github.com/compulim)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/compulim/react-sanitize-html/issues"
+    "url": "https://github.com/compulim/react-sanitized-html/issues"
   },
-  "homepage": "https://github.com/compulim/react-sanitize-html#readme",
+  "homepage": "https://github.com/compulim/react-sanitized-html#readme",
   "peerDependencies": {
     "react": "^15.4.2",
     "sanitize-html": "^1.14.1"
