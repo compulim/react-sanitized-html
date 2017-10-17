@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/compulim/react-sanitized-html#readme",
   "peerDependencies": {
+    "prop-types": "^15.5.10",
     "react": "^15.4.2",
     "sanitize-html": "^1.14.1"
   },
