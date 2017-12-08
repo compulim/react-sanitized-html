@@ -1,10 +1,10 @@
 {
   "name": "react-sanitized-html",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A React component that will sanitize user-inputted HTML code, using the popular sanitize-html package",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -23,16 +23,18 @@
   },
   "homepage": "https://github.com/compulim/react-sanitized-html#readme",
   "peerDependencies": {
-    "prop-types": "^15.5.10",
-    "react": "^15.4.2",
-    "sanitize-html": "^1.14.1"
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "sanitize-html": "^1.16.1"
   },
   "devDependencies": {
-    "babel-preset-es2015": "^6.22.0",
-    "babel-preset-es2017": "^6.22.0",
-    "babel-preset-react": "^6.23.0",
-    "babel-register": "^6.23.0",
-    "mocha": "^3.2.0",
-    "react-dom": "^15.4.2"
+    "babel-core": "^6.26.0",
+    "babel-jest": "^21.2.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "jest": "^21.2.1",
+    "react-dom": "^16.2.0",
+    "regenerator-runtime": "^0.11.1"
   }
 }
