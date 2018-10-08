@@ -1,4 +1,11 @@
 {
-  "highlightCode": false,
-  "presets": ["es2017", "es2015", "react"]
+  "plugins": [
+    "@babel/plugin-proposal-object-rest-spread"
+  ],
+  "presets": [
+    ["@babel/preset-env", {
+      "forceAllTransforms": true
+    }],
+    "@babel/preset-react"
+  ]
 }
