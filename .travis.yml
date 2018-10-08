@@ -1,5 +1,35 @@
 language: node_js
+
 node_js:
-  - "8"
+  - "10"
+
 before_script:
-  - npm install prop-types react sanitize-html
+  - npm run build
+
+before_deploy:
+  - git config --local user.name "William Wong"
+  - git config --local user.email "compulim@hotmail.com"
+  - npx version-from-git --travis
+
+deploy:
+  - provider: npm
+    api_key:
+      secure: "s6teK2mePMYiChT+PgV4JnUWRhTWwTZjUVuLn30kmEpPBjtSnw2ZgryYIgiH7G7uQ0dxfgtjy6R8fv81iWb1sGNbSGSP6aqlOKKdfWmLViI7ajzmNkDivb1c0GwnllDTRk0R3QZLD5zGCJW8UejlZZ/qB9CNjIqYISOxqiw2YvpeIYGkFozizobVl2FRtACsyHZmSz8c2C2CkvCImggR/zDju3bze04V9haQaVQzTkJhbNsMKZ6B2uuVpGLjftb6nfYavYirwpPaQ9j3lqkbWXtv/pjz8mRKL1tvUTlwiSl9+rwcNGsRIeXs2KVj/+xCs9ZtgbEqtE3/s+gNhN2Gcmgw5LJKrndDcNsRBVhFQx7teG9xOdWmTzDOoHZ5qcNYwbLqYGyI9nCpMHKlH7KHbB3CGwXRCNNnzXcQI14z2DKmLZVKHwv41uZ6vWfzuI+Cp7LhfMbuoVb+bbulpTCeOcuoth670B0zA+6v0Q7emodLE1NTovrwhW7ayM63hlIhf+JDNRRZl35cRJFx7pZ+49Q00oscQ2C2nATcBm7CExCj8hfzU4QwTeb+0xYpt2Q9oTeCqUudg8jRWutz9BfzUBB9tuJOD8bEYQouKR0DR7woyzWf3OGu06frR9hZVnCO4aQ2lArW3GYQsAQPB/nczOZobfmx2BF4YB+r5byxTw8="
+    email: "compulim@hotmail.com"
+    on:
+      branch: master
+    skip_cleanup: true
+    tag: master
+  - provider: npm
+    api_key:
+      secure: "s6teK2mePMYiChT+PgV4JnUWRhTWwTZjUVuLn30kmEpPBjtSnw2ZgryYIgiH7G7uQ0dxfgtjy6R8fv81iWb1sGNbSGSP6aqlOKKdfWmLViI7ajzmNkDivb1c0GwnllDTRk0R3QZLD5zGCJW8UejlZZ/qB9CNjIqYISOxqiw2YvpeIYGkFozizobVl2FRtACsyHZmSz8c2C2CkvCImggR/zDju3bze04V9haQaVQzTkJhbNsMKZ6B2uuVpGLjftb6nfYavYirwpPaQ9j3lqkbWXtv/pjz8mRKL1tvUTlwiSl9+rwcNGsRIeXs2KVj/+xCs9ZtgbEqtE3/s+gNhN2Gcmgw5LJKrndDcNsRBVhFQx7teG9xOdWmTzDOoHZ5qcNYwbLqYGyI9nCpMHKlH7KHbB3CGwXRCNNnzXcQI14z2DKmLZVKHwv41uZ6vWfzuI+Cp7LhfMbuoVb+bbulpTCeOcuoth670B0zA+6v0Q7emodLE1NTovrwhW7ayM63hlIhf+JDNRRZl35cRJFx7pZ+49Q00oscQ2C2nATcBm7CExCj8hfzU4QwTeb+0xYpt2Q9oTeCqUudg8jRWutz9BfzUBB9tuJOD8bEYQouKR0DR7woyzWf3OGu06frR9hZVnCO4aQ2lArW3GYQsAQPB/nczOZobfmx2BF4YB+r5byxTw8="
+    email: "compulim@hotmail.com"
+    on:
+      tags: true
+    skip_cleanup: true
+  - provider: releases
+    api_key:
+      secure: "dTUPB0/A//bKkUfwBQEM/OZkooE008judmz0Sd85xxLjy3CXi+Fvx+cwMZ1j4pWrlYyiaSa9RmDPn+1WwXtt3d6nTj8sHj4BFJLFk149lCwUREvScDFRUhyp7nwAdGU7A7LtA9u6vx5mj4zBTn/JoKA6cAYRqmQRNY0YkgBpCIrXjMEMPmm1V8mCd7LYPFqpjzlXbrEgO6izfSDlhsVH8CCpePN/NkDjmAJI5VH6v0Hr9dKAHFO8kbYFTzXZmP3y1HeIDsxCw631B+KpklLyXmwoDEmYerWTADD6L9QrQvDZc9hSckCOqJSDJHJ6/8OiHnDGxU3mhUJH+jZ1eLzxpeAMJoPZuEyrMC8Zzgle5O8OHywDVUUU/gZBiwYnjloDRKa+z5PsxD2IHqRcYEB5KLYz9RE+BWR+e2gH5Z9Nyob+aY0MkfMCZifu+i3TS1WWQJl5Vjg1BmR48K75aBrpPvrGQl1iZIhc2gxUpcADL3YG3nFcX5a+Uauxh941gabzAigCY6WAswHM2BS5OHg5662GtMZ3pj3yZScR9LSjvkgcbVqbmLspovxIZYh95KVr8Fvz44YdFtBlgZdqH9rvdEFhH4t9eBWZhePNMXXAiKZW5AYBVVAk+WRdsFUjAMizqkORi4VVDyuMyYm/cAuUhNmjhV1cU7PxPbh92DNVXts="
+    on:
+      tags: true
+    skip_cleanup: true

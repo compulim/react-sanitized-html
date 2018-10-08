@@ -1,7 +1,5 @@
-'use strict';
-
-import React from 'react';
 import PropTypes from 'prop-types'
+import React from 'react';
 import sanitizeHTML from 'sanitize-html';
 
 const SUPPORTED_SANITIZER_OPTIONS = [
@@ -18,32 +16,31 @@ const SUPPORTED_SANITIZER_OPTIONS = [
   'transformTags'
 ];
 
-export default class SanitizedHTML extends React.Component {
-  render() {
-    const sanitizerOptions = SUPPORTED_SANITIZER_OPTIONS.reduce((options, name) => {
-      const value = this.props[name];
+const SanitizedHTML = props => {
+  const sanitizerOptions = SUPPORTED_SANITIZER_OPTIONS.reduce((options, name) => {
+    const value = props[name];
 
-      if (typeof value !== 'undefined') {
-        options[name] = value;
-      }
+    if (typeof value !== 'undefined') {
+      options[name] = value;
+    }
 
-      return options;
-    }, {});
+    return options;
+  }, {});
 
-    const sanitizedHTML = sanitizeHTML(
-      this.props.html,
-      sanitizerOptions
-    );
+  // TODO: Add memoization
+  const sanitizedHTML = sanitizeHTML(
+    props.html,
+    sanitizerOptions
+  );
 
-    return (
-      <div
-        className={ this.props.className }
-        dangerouslySetInnerHTML={{ __html: sanitizedHTML }}
-        id={ this.props.id }
-        style={ this.props.style }
-      />
-    );
-  }
+  return (
+    <div
+      className={ props.className }
+      dangerouslySetInnerHTML={{ __html: sanitizedHTML }}
+      id={ props.id }
+      style={ props.style }
+    />
+  );
 }
 
 SanitizedHTML.defaultProps = {
@@ -68,3 +65,5 @@ SanitizedHTML.propTypes = {
   id       : PropTypes.string,
   style    : PropTypes.any
 };
+
+export default SanitizedHTML
