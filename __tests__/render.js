@@ -10,7 +10,7 @@ describe('SanitizedHTML', () => {
       ReactDOMServer.renderToStaticMarkup(
         <SanitizedHTML html={ '<a href="http://bing.com/">Bing</a>' }/>
       )
-    ).toBe('<div><a href="http://bing.com/">Bing</a></div>');
+    ).toBe('<span><a href="http://bing.com/">Bing</a></span>');
   });
 
   test('should render only allowed tags', () => {
@@ -21,6 +21,6 @@ describe('SanitizedHTML', () => {
           html={ '<a href="http://bing.com/"><strong>Bing</strong></a>' }
         />
       )
-    ).toBe('<div><a href="http://bing.com/">Bing</a></div>');
+    ).toBe('<span><a href="http://bing.com/">Bing</a></span>');
   });
 });
