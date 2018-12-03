@@ -34,7 +34,7 @@ const SanitizedHTML = props => {
   );
 
   return (
-    <div
+    <span
       className={ props.className }
       dangerouslySetInnerHTML={{ __html: sanitizedHTML }}
       id={ props.id }
