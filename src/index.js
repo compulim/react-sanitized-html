@@ -33,6 +33,18 @@ const SanitizedHTML = props => {
     sanitizerOptions
   );
 
+  if(props.tagName){
+  	return React.createElement(
+  		props.tagName,
+	    {
+	    	className: props.className,
+		    dangerouslySetInnerHTML: { __html: sanitizedHTML },
+		    id: props.id,
+		    style: props.style
+	    }
+    )
+  }
+
   return (
     <div
       className={ props.className }
