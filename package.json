@@ -1,6 +1,6 @@
 {
-  "name": "react-sanitized-html",
-  "version": "2.0.1-0",
+  "name": "react-sanitized",
+  "version": "1.0.0",
   "description": "A React component that will sanitize user-inputted HTML code, using the popular sanitize-html package",
   "main": "lib/index.js",
   "module": "lib/index.js",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/compulim/react-sanitized-html.git"
+    "url": "git+https://github.com/marius-ionescu/react-sanitized"
   },
   "keywords": [
     "sanitize",
@@ -23,16 +23,15 @@
     "react",
     "clean"
   ],
-  "author": "William Wong <compulim@hotmail.com> (https://github.com/compulim)",
+  "author": "Marius Ionescu <ionescu.m@outlook.com> (https://github.com/marius-ionescu/react-sanitized)",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/compulim/react-sanitized-html/issues"
+  "homepage": "https://github.com/marius-ionescu/react-sanitized#readme",
+  "dependencies": {
+    "sanitize-html": "^1.20.0"
   },
-  "homepage": "https://github.com/compulim/react-sanitized-html#readme",
   "peerDependencies": {
     "prop-types": "^15.6.0",
-    "react": "^16.0.0",
-    "sanitize-html": "^1.16.1"
+    "react": "^16.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
@@ -43,11 +42,13 @@
     "@babel/preset-react": "^7.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-jest": "^22.4.1",
+    "eslint-plugin-react": "^7.12.4",
     "jest": "^23.6.0",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.2.0",
-    "rimraf": "^2.6.2",
-    "sanitize-html": "^1.16.1"
+    "rimraf": "^2.6.2"
   }
 }

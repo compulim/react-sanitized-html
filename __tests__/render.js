@@ -1,26 +1,38 @@
-'use strict';
+import React from "react";
+import ReactDOMServer from "react-dom/server";
+import Sanitized from "../src";
 
-import React from 'react';
-import ReactDOMServer from 'react-dom/server';
-import SanitizedHTML from '../';
-
-describe('SanitizedHTML', () => {
-  test('should render tag correctly', () => {
+describe("Sanitized", () => {
+  test("should render tag correctly", () => {
     expect(
       ReactDOMServer.renderToStaticMarkup(
-        <SanitizedHTML html={ '<a href="http://bing.com/">Bing</a>' }/>
-      )
-    ).toBe('<div><a href="http://bing.com/">Bing</a></div>');
-  });
-
-  test('should render only allowed tags', () => {
-    expect(
-      ReactDOMServer.renderToStaticMarkup(
-        <SanitizedHTML
-          allowedTags={['a']}
-          html={ '<a href="http://bing.com/"><strong>Bing</strong></a>' }
+        <Sanitized
+          html={
+            '<a href="http://github.com" onClick="alert(\'test\')">Github</a>'
+          }
         />
       )
-    ).toBe('<div><a href="http://bing.com/">Bing</a></div>');
+    ).toBe('<span><a href="http://github.com">Github</a></span>');
+  });
+
+  test("should render only allowed tags", () => {
+    expect(
+      ReactDOMServer.renderToStaticMarkup(
+        <Sanitized
+          options={{ allowedTags: ["a"] }}
+          html={'<a href="http://github.com"><strong>Github</strong></a>'}
+        />
+      )
+    ).toBe('<span><a href="http://github.com">Github</a></span>');
+  });
+
+  test("should render the provided wrapper tag", () => {
+    const providedTag = "label";
+    const html = '<a href="http://github.com"><strong>Github</strong></a>';
+    expect(
+      ReactDOMServer.renderToStaticMarkup(
+        <Sanitized html={html} wrapperTag="label" />
+      )
+    ).toBe(`<${providedTag}>${html}</${providedTag}>`);
   });
 });
