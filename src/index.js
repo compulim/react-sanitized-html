@@ -59,7 +59,7 @@ SanitizedHTML.propTypes = {
   nonTextTags          : PropTypes.arrayOf(PropTypes.string),
   parser               : PropTypes.any,
   selfClosing          : PropTypes.arrayOf(PropTypes.string),
-  transformTags        : PropTypes.objectOf(PropTypes.oneOf([PropTypes.func, PropTypes.string])),
+  transformTags        : PropTypes.objectOf(PropTypes.oneOfType([PropTypes.func, PropTypes.string])),
 
   className: PropTypes.string,
   id       : PropTypes.string,
