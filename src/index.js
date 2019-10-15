@@ -49,11 +49,11 @@ SanitizedHTML.defaultProps = {
 
 SanitizedHTML.propTypes = {
   allowProtocolRelative: PropTypes.bool,
-  allowedAttributes    : PropTypes.objectOf(PropTypes.arrayOf(PropTypes.string)),
+  allowedAttributes    : PropTypes.oneOfType([PropTypes.objectOf(PropTypes.arrayOf(PropTypes.string)), PropTypes.oneOf([false])]),
   allowedClasses       : PropTypes.objectOf(PropTypes.arrayOf(PropTypes.string)),
   allowedSchemes       : PropTypes.arrayOf(PropTypes.string),
   allowedSchemesByTag  : PropTypes.objectOf(PropTypes.arrayOf(PropTypes.string)),
-  allowedTags          : PropTypes.arrayOf(PropTypes.string),
+  allowedTags          : PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.string), PropTypes.oneOf([false])]),
   exclusiveFilter      : PropTypes.func,
   html                 : PropTypes.string.isRequired,
   nonTextTags          : PropTypes.arrayOf(PropTypes.string),
