@@ -9,6 +9,7 @@ const SUPPORTED_SANITIZER_OPTIONS = [
   'allowedSchemes',
   'allowedSchemesByTag',
   'allowedTags',
+  'allowVulnerableTags',
   'exclusiveFilter',
   'nonTextTags',
   'parser',
